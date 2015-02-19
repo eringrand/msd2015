@@ -64,6 +64,7 @@ lm.out$coefficients
 ## MODEL SIN CURVE
 x <- seq(0, 1, by = 0.01)
 y <- sin(2 * pi * x) + rnorm(length(x), 0, 0.1)
+plot(x,y)
 
 # let's use data frames to make the whole of the polynomial:
 df <- data.frame(X = x, Y = y)
@@ -93,5 +94,13 @@ summary(
   data = df)
 )
 
+# better fit with more paramaters
+ 
+
 # use "poly" to get orthogonal polynomials
 summary(lm(Y ~ poly(X, degree = 14), data = df))
+
+
+#when do you stop adding terms to polynomial?
+plot((predict(object = lm.out))
+     
