@@ -14,22 +14,22 @@ fx= x[,seq(nzc)] %*% beta
 # regression:
 # ====
 eps=rnorm(n)*5
-hist(eps)
 # define y
 # y=drop(fx+eps)
 y=fx+eps
-# do cv curve and show coeffs (MAGIC)
-# glmnet use L1 term (abs(Theta)) instead of L2 (L1=lasso)
-# sparse
+# do cv curve and show coeffs
+
+# L1
 cvob1=cv.glmnet(x,y)
 plot(cvob1)
+# behold a sparse model. thanks to L1=lasso
 coef(cvob1)
 
-# run glmnet with L2
-# non sparse 
-cvob2=cv.glmnet(x,y,alpha=0)
-plot(cvob2)
-coef(cvob2)
+# L2
+cvob1=cv.glmnet(x,y,alpha=0)
+plot(cvob1)
+# bummer.
+coef(cvob1)
 
 # classification:
 # ====
@@ -39,8 +39,8 @@ px=px/(1+px)
 # make a "binary"/"dichotomous" random variable
 ly=rbinom(n=length(px),prob=px,size=1)
 cvob3a=cv.glmnet(x,ly,family="binomial",type.measure="auc")
-plot(cvob3a)
-# regularization 
+
+# regularization path
 plot(glmnet(x,y))
-
-
+# what if L2?
+plot(glmnet(x,y,alpha=0))

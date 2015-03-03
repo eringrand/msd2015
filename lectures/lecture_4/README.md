@@ -22,7 +22,8 @@ regression is gateway
 - loss=OSS/SSL
 - optimization=OLS
   - model known, e.g., dropping rock
-  - go through model
+  - [go through model](http://en.wikipedia.org/wiki/Linear_least_squares_(mathematics)#Derivation_of_the_normal_equations)
+)
   - linear algebra
     + [projection](http://en.wikipedia.org/wiki/Ordinary_least_squares#Geometric_approach)
     + inversion
@@ -43,10 +44,14 @@ regression is gateway
 
 # let's code
 
-- fake data
-- covariates: scale them and see what happens to coefficients
-- covariates: add some noise
-- covariates: add some linearly dependent ones
-- real data: 'views'
+- simple regression [code](https://github.com/jhofman/msd2015/blob/master/lectures/lecture_4/intro-regression.R)
+  + fake data
+  + covariates: scale them and see what happens to coefficients
+  + covariates: add some noise
+  + covariates: add some linearly dependent ones
+- real data: 'views'  
+  + (note you will have to [install](https://github.com/jhofman/msd2015/blob/master/lectures/lecture_4/install.all.the.things.R) some things)
+  + [data](https://github.com/jhofman/msd2015/blob/master/lectures/lecture_4/users.tsv.gz)
+  + [code](https://github.com/jhofman/msd2015/blob/master/lectures/lecture_4/neilsen-polyfit.R)
 - add some polynomaisl
-- do [cv.glmnet](http://cran.r-project.org/web/packages/glmnet/index.html)  examples
+- do [cv.glmnet](http://cran.r-project.org/web/packages/glmnet/index.html)  examples via some simple [code](https://github.com/jhofman/msd2015/blob/master/lectures/lecture_4/intro-glmnet.R)
