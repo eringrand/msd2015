@@ -59,6 +59,7 @@ views.by.age.gender <- filter(users, age <= 90) %>%
             geom.mean.daily.views=geom.mean(daily.views),
             num.users            =length(   daily.views)
   )
+# creates the dots on plot which are means for everyone of same gender and age
 
 # create synthetic examples for both genders, all ages
 # add predicted page views to synthetic examples

@@ -102,5 +102,5 @@ summary(lm(Y ~ poly(X, degree = 14), data = df))
 
 
 #when do you stop adding terms to polynomial?
-plot((predict(object = lm.out))
+# plot((predict(object = lm.out))
      
